@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Magdalena Bay Song Tournament&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #f3f4f6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>justify-content: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>#battleNumber {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>#progress-container {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 80%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>#progressBar {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #4caf50;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 0%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: width 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>#progressPercent {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>line-height: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>#choices {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-wrap: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.song-card {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 3px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 45vw; <span class="Apple-converted-space">      </span>/* responsive width */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 420px;<span class="Apple-converted-space">  </span>/* cap at 420px */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-shadow: 0 4px 10px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: transform 0.1s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.song-card:hover { transform: scale(1.03); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.song-card img {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.song-card p {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1">#result {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: none; /* hide the final ranking section until results are shown */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 40px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">#ranking {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>list-style: decimal;<span class="Apple-converted-space">  </span>/* ensures numbers appear */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding-left: 40px; <span class="Apple-converted-space">  </span>/* indentation for the list */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: left; <span class="Apple-converted-space">    </span>/* keep numbers aligned */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: inline-block; /* center the list as a block */</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.result-item {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 8px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.result-item span:first-child {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 25px; /* keeps numbers aligned */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: right;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.result-image {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 6px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>#titleLogo {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width: 400px; /* adjust size */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 70%; <span class="Apple-converted-space">      </span>/* responsive scaling */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 0 auto 24px auto; /* center horizontally and space below */</p>
+<p class="p1">}</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="images/magdalena-bay-logo.png" alt="Magdalena Bay Logo" id="titleLogo"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="battleNumber"&gt;Battle 1&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="progress-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="progressBar"&gt;&lt;span id="progressPercent"&gt;0%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="choices"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="song-card" id="left" onclick="choose('left')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img id="leftImg" src="" alt="Left Song"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p id="leftName"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="song-card" id="right" onclick="choose('right')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img id="rightImg" src="" alt="Right Song"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p id="rightName"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="result"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Final Ranking&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;ol id="ranking"&gt;&lt;/ol&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const songs = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Voc Pop", image: "images/voc-pop.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Head Over Heels", image: "images/head-over-heels.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "#wastehistime", image: "images/wastehistime.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Neon", image: "images/neon.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Set Me Off", image: "images/set-me-off.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Redbone", image: "images/redbone.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Drive Alone", image: "images/drive-alone.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Move Slow", image: "images/move-slow.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Waking Up", image: "images/waking-up.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "The Girls", image: "images/the-girls.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Ghost", image: "images/ghost.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Money Lover", image: "images/money-lover.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Only If You Want It", image: "images/only-if-you-want-it.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Mine", image: "images/mine.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Venice", image: "images/venice.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Good Intentions", image: "images/good-intentions.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Killshot", image: "images/killshot.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Oh Hell", image: "images/oh-hell.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "How to Get Physical", image: "images/how-to-get-physical.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Airplane", image: "images/airplane.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Live 4ever", image: "images/live-4ever.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Woww", image: "images/woww.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Hideaway", image: "images/hideaway.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Sky2Fall", image: "images/sky2fall.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Push Me Away", image: "images/push-me-away.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Chaeri", image: "images/chaeri.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Secrets (Your Fire)", image: "images/secrets-your-fire.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "You Lose!", image: "images/you-lose.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Death &amp; Romance", image: "images/death-romance.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Image", image: "images/image.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Tunnel Vision", image: "images/tunnel-vision.jpeg" },</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// mini mix, vol. 1</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Intro", image: "images/mini-mix-vol-1.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Afternoon in Heaven", image: "images/mini-mix-vol-1.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "El Dorado", image: "images/mini-mix-vol-1.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Turning Off the Rain", image: "images/mini-mix-vol-1.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "U Wanna Dance?", image: "images/mini-mix-vol-1.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Nothing Baby", image: "images/mini-mix-vol-1.jpeg" },</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// A Little Rhythm and a Wicked Feeling</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Story", image: "images/a-little-rhythm-and-a-wicked-feeling.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Stop &amp; Go", image: "images/a-little-rhythm-and-a-wicked-feeling.jpeg" },</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// mini mix, vol. 2</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "I Don’t Want to Cry Anymore", image: "images/mini-mix-vol-2.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Body", image: "images/mini-mix-vol-2.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Sky2Fall (Reprise)", image: "images/mini-mix-vol-2.jpeg" },</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Mercurial World</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "The End", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Mercurial World", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Dawning of the Season", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Something for 2", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Halfway", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Hysterical Us", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Prophecy", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Follow the Leader", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Domino", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Dreamcatching", image: "images/mercurial-world.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "The Beginning", image: "images/mercurial-world.jpeg" },</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Mercurial World (Deluxe)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "secret 1", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Unconditional", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "secrets 2-9: medley", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "secret 10", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "secret 11", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "secret 12", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "All You Do", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "secret 13", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "secret 14", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "secret 15", image: "images/mercurial-world-deluxe.jpeg" },</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// mini mix, vol. 3</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Slug Song", image: "images/mini-mix-vol-3.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "EXO", image: "images/mini-mix-vol-3.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "2 Wheel Drive", image: "images/mini-mix-vol-3.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Top Dog", image: "images/mini-mix-vol-3.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Tonguetwister", image: "images/mini-mix-vol-3.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Wandering Eyes", image: "images/mini-mix-vol-3.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Slug Song (Reprise)", image: "images/mini-mix-vol-3.jpeg" },</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Imaginal Disk</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "She Looked Like Me!", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Killing Time", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "True Blue Interlude", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Fear, Sex", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Vampire in the Corner", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Watching T.V.", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Love is Everywhere", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Feeling DiskInserted?", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "That’s My Floor", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Cry for Me", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Angel on a Satellite", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "The Ballad of Matt &amp; Mica", image: "images/imaginal-disk.jpeg" },</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Nice Day: A Collection of Singles</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Second Sleep", image: "images/second-sleep.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Star Eyes", image: "images/star-eyes.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Human Happens", image: "images/human-happens.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Paint Me a Picture", image: "images/paint-me-a-picture.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Unoriginal", image: "images/unoriginal.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Black-Eyed Susan Climb", image: "images/black-eyed-susan-climb.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "This is the World (I Made It for You)", image: "images/this-is-the-world-i-made-it-for-you.jpeg" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ name: "Nice Day", image: "images/nice-day.jpeg" }</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">/* Shuffle songs */</p>
+<p class="p1">songs.sort(() =&gt; Math.random() - 0.5);</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- Helper: estimate exact comparisons for merge-sort style merging --- */</p>
+<p class="p1">function estimateTotalComparisons(n) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (n &lt;= 1) return 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const mid = Math.floor(n / 2);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">    </span>estimateTotalComparisons(mid) +</p>
+<p class="p1"><span class="Apple-converted-space">    </span>estimateTotalComparisons(n - mid) +</p>
+<p class="p1"><span class="Apple-converted-space">    </span>(n - 1) // merging two parts of total length n requires at most n-1 comparisons</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- Tournament state --- */</p>
+<p class="p1">let lists = songs.map(s =&gt; [s]);</p>
+<p class="p1">let currentMergeQueue = [];</p>
+<p class="p1">let currentMerge = null;</p>
+<p class="p1">let head1 = 0, head2 = 0;</p>
+<p class="p1">let rec = [];</p>
+<p class="p2"><br></p>
+<p class="p1">/* battle counter shown in UI is comparisonsDone + 1 */</p>
+<p class="p1">let comparisonsDone = 0;</p>
+<p class="p1">const totalComparisons = estimateTotalComparisons(songs.length);</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- Progress update --- */</p>
+<p class="p1">function updateProgress() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const bar = document.getElementById("progressBar");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const percentText = document.getElementById("progressPercent");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!bar || !percentText) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// handle edge case when totalComparisons is 0</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const pct = totalComparisons === 0 ? 100 : Math.floor((comparisonsDone / totalComparisons) * 100);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>bar.style.width = Math.min(100, pct) + "%";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>percentText.textContent = Math.min(100, pct) + "%";</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- Show current pair (images + names) --- */</p>
+<p class="p1">function showImage() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!currentMerge) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// battle number: show next comparison index (1-based)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("battleNumber").textContent = `Battle ${comparisonsDone + 1}`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("leftImg").src = currentMerge.left[head1].image;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("leftName").textContent = currentMerge.left[head1].name;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("rightImg").src = currentMerge.right[head2].image;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("rightName").textContent = currentMerge.right[head2].name;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- When a user chooses left or right --- */</p>
+<p class="p1">function choose(side) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!currentMerge) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// record the chosen item (this is a user-driven comparison)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>rec.push(side === "left" ? currentMerge.left[head1++] : currentMerge.right[head2++]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// update comparison counters</p>
+<p class="p1"><span class="Apple-converted-space">  </span>comparisonsDone++;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>updateProgress();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// if the other side is already exhausted, push the remainder (no extra comparisons)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>while (head1 &lt; currentMerge.left.length &amp;&amp; head2 === currentMerge.right.length) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rec.push(currentMerge.left[head1++]);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>while (head2 &lt; currentMerge.right.length &amp;&amp; head1 === currentMerge.left.length) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rec.push(currentMerge.right[head2++]);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// if both heads reached ends, finalize merged array</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (head1 === currentMerge.left.length &amp;&amp; head2 === currentMerge.right.length) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>currentMerge.merged.push(...rec);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rec = [];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>prepareNextMerge();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// there are still items to compare in this merge</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showImage();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// stop listening for keys when finished</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (comparisonsDone &gt;= totalComparisons) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.removeEventListener("keydown", keyListener);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- Move to next merge or round --- */</p>
+<p class="p1">function prepareNextMerge() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (currentMergeQueue.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>currentMerge = currentMergeQueue.shift();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>head1 = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>head2 = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showImage();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>prepareNextRound();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- Build next round's merge queue from lists --- */</p>
+<p class="p1">function prepareNextRound() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let newLists = [];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>currentMergeQueue = [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>while (lists.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const left = lists.shift();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const right = lists.shift();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const merged = [];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (right) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>currentMergeQueue.push({ left, right, merged });</p>
+<p class="p1"><span class="Apple-converted-space">      </span>newLists.push(merged);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>newLists.push(left);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>lists = newLists;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (currentMergeQueue.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>currentMerge = currentMergeQueue.shift();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>head1 = 0; head2 = 0; rec = [];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// if currentMerge.left or right are empty (shouldn't happen), guard:</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (currentMerge.left.length === 0 &amp;&amp; currentMerge.right.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>prepareNextMerge();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>showImage();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showResult();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- Show final ranking --- */</p>
+<p class="p1">function showResult() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("choices").style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const resultDiv = document.getElementById("result");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>resultDiv.style.display = "block";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const rankingList = document.getElementById("ranking");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>rankingList.innerHTML = ""; // clear previous results</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>(lists[0] || []).forEach((song, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const li = document.createElement("li");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>li.classList.add("result-item");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// number text</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const numberSpan = document.createElement("span");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>numberSpan.textContent = `${index + 1}.`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// image</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const img = document.createElement("img");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>img.src = song.image;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>img.alt = song.name;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>img.classList.add("result-image");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// song name</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const text = document.createElement("span");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text.textContent = song.name;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>li.appendChild(numberSpan);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>li.appendChild(img);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>li.appendChild(text);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>rankingList.appendChild(li);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>comparisonsDone = totalComparisons;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>updateProgress();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- Keyboard listener --- */</p>
+<p class="p1">function keyListener(e) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (comparisonsDone &gt;= totalComparisons) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (e.key === "ArrowLeft") choose("left");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (e.key === "ArrowRight") choose("right");</p>
+<p class="p1">}</p>
+<p class="p1">document.addEventListener("keydown", keyListener);</p>
+<p class="p2"><br></p>
+<p class="p1">/* --- Initialize &amp; start --- */</p>
+<p class="p1">lists = songs.map(s =&gt; [s]); // re-init lists (safe)</p>
+<p class="p1">prepareNextRound();</p>
+<p class="p1">updateProgress();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
