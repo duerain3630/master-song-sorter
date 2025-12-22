@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Song Sorter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background: #0b0b0b;
+      color: white;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .artist {
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .artist img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+
+    .artist:hover img {
+      transform: scale(1.04);
+    }
+
+    .artist span {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Choose an Artist</h1>
+
+  <div class="grid">
+    <div class="artist" onclick="go('magdalena_bay')">
+      <img src="images/magdalena_bay/thumb.jpg">
+      <span>Magdalena Bay</span>
+    </div>
+
+    <div class="artist" onclick="go('ninos_del_cerro')">
+      <img src="images/ninos_del_cerro/thumb.jpg">
+      <span>Niños del Cerro</span>
+    </div>
+  </div>
+
+  <script>
+    function go(artist) {
+      window.location.href = `sorter.html?artist=${artist}`;
+    }
+  </script>
+</body>
+</html>
