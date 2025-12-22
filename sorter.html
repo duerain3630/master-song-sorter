@@ -203,7 +203,7 @@ if (!artistKey || !ARTISTS[artistKey]) {
 const artist = ARTISTS[artistKey];
 const songs = artist.songs.map(song => ({ ...song }));
 
-document.title = artist.title;
+document.title = artist.name;
 
 const logo = document.getElementById("titleLogo");
 logo.src = artist.logo;
