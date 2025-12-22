@@ -1,7 +1,7 @@
 const ARTISTS = {
   magdalena_bay: {
     title: "Magdalena Bay Song Sorter",
-    logo: "images/magdalena-bay-logo.png",
+    logo: "images/magdalena-bay/magdalena-bay-logo.png",
     songs: [
       
       // Singles
@@ -114,9 +114,9 @@ const ARTISTS = {
     ]
   },
 
-  niños_del_cerro: {
+  ninos_del_cerro: {
     title: "Niños del Cerro Song Sorter",
-    logo: "images/ninos-del-cerro-logo.png",
+    logo: "images/ninos-del-cerro/ninos-del-cerro-logo.png",
     songs: [
       
       // Singles

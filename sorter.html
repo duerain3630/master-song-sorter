@@ -24,6 +24,21 @@
     text-align: center;
   }
 
+  #backBtn {
+  align-self: flex-start;
+  margin: 10px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+  #backBtn:hover {
+    background: #d1d5db;
+  }
+
   #battleNumber {
     font-size: 1.3rem;
     font-weight: bold;
@@ -144,8 +159,9 @@
 </head>
 <body>
   <h1>
-    <img src="images/magdalena-bay-logo.png" alt="Magdalena Bay Logo" id="titleLogo">
+    <img alt="Artist Logo" id="titleLogo">
   </h1>
+  <button id="backBtn" onclick="goBack()">← Back to Hub</button>
   <div id="battleNumber">Battle 1</div>
 
   <div id="progress-container">
@@ -169,8 +185,13 @@
   </div>
 
 <script src="data/artists.js"></script>
+
 <script>
 
+function goBack() {
+  window.location.href = "index.html";
+}
+
 const params = new URLSearchParams(window.location.search);
 const artistKey = params.get("artist");
 
@@ -182,22 +203,11 @@ if (!artistKey || !ARTISTS[artistKey]) {
 const artist = ARTISTS[artistKey];
 const songs = artist.songs.map(song => ({ ...song }));
 
-document.title = artist.name;
+document.title = artist.title;
 
-/* --- Resolve chosen artist (required) --- */
-const params = new URLSearchParams(window.location.search);
-const artistKey = params.get("artist");
-
-if (!artistKey || !ARTISTS[artistKey]) {
-  // No artist chosen → go back to hub
-  window.location.href = "index.html";
-  throw new Error("Artist not selected");
-}
-
-const artist = ARTISTS[artistKey];
-
-/* --- Active song list (copy) --- */
-const songs = artist.songs.map(song => ({ ...song }));
+const logo = document.getElementById("titleLogo");
+logo.src = artist.logo;
+logo.alt = artist.title;
 
 /* Shuffle songs */
 songs.sort(() => Math.random() - 0.5);
