@@ -171,6 +171,19 @@
 <script src="data/artists.js"></script>
 <script>
 
+const params = new URLSearchParams(window.location.search);
+const artistKey = params.get("artist");
+
+if (!artistKey || !ARTISTS[artistKey]) {
+  window.location.href = "index.html";
+  throw new Error("Artist not selected");
+}
+
+const artist = ARTISTS[artistKey];
+const songs = artist.songs.map(song => ({ ...song }));
+
+document.title = artist.name;
+
 /* --- Resolve chosen artist (required) --- */
 const params = new URLSearchParams(window.location.search);
 const artistKey = params.get("artist");
