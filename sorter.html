@@ -24,6 +24,22 @@
     text-align: center;
   }
 
+  #backBtn {
+  align-self: flex-start;
+  margin: 10px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+#backBtn:hover {
+  background: #d1d5db;
+}
+
+
   #battleNumber {
     font-size: 1.3rem;
     font-weight: bold;
@@ -146,6 +162,7 @@
   <h1>
     <img alt="Artist Logo" id="titleLogo">
   </h1>
+  <button id="backBtn" onclick="goBack()">← Back to Hub</button>
   <div id="battleNumber">Battle 1</div>
 
   <div id="progress-container">
@@ -169,7 +186,12 @@
   </div>
 
 <script src="data/artists.js"></script>
+
 <script>
+
+function goBack() {
+  window.location.href = "index.html";
+}
 
 const params = new URLSearchParams(window.location.search);
 const artistKey = params.get("artist");
