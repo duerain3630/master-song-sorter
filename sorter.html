@@ -144,7 +144,7 @@
 </head>
 <body>
   <h1>
-    <img src="images/magdalena-bay-logo.png" alt="Magdalena Bay Logo" id="titleLogo">
+    <img alt="Artist Logo" id="titleLogo">
   </h1>
   <div id="battleNumber">Battle 1</div>
 
@@ -182,22 +182,11 @@ if (!artistKey || !ARTISTS[artistKey]) {
 const artist = ARTISTS[artistKey];
 const songs = artist.songs.map(song => ({ ...song }));
 
-document.title = artist.name;
+document.title = artist.title;
 
-/* --- Resolve chosen artist (required) --- */
-const params = new URLSearchParams(window.location.search);
-const artistKey = params.get("artist");
-
-if (!artistKey || !ARTISTS[artistKey]) {
-  // No artist chosen → go back to hub
-  window.location.href = "index.html";
-  throw new Error("Artist not selected");
-}
-
-const artist = ARTISTS[artistKey];
-
-/* --- Active song list (copy) --- */
-const songs = artist.songs.map(song => ({ ...song }));
+const logo = document.getElementById("titleLogo");
+logo.src = artist.logo;
+logo.alt = artist.title;
 
 /* Shuffle songs */
 songs.sort(() => Math.random() - 0.5);
