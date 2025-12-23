@@ -202,7 +202,7 @@
   const artist = ARTISTS[artistKey];
   const songs = artist.songs.map(song => ({ ...song }));
   
-  document.title = artist.name;
+  document.title = artist.title;
   
   const logo = document.getElementById("titleLogo");
   logo.src = artist.logo;
