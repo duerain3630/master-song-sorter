@@ -423,3 +423,5 @@ const ARTISTS = {
       { name: "Romeo", image: "images/pinkpantheress/fancy-that.jpeg" }
     ]
 };
+
+window.ARTISTS = ARTISTS;
