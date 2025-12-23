@@ -184,209 +184,206 @@
     <ol id="ranking"></ol>
   </div>
 
-<script src="artists.js"></script>
-  
-<script src="sorter.js"></script>
+<script src="data/artists.js"></script>
 
 <script>
-
-function goBack() {
-  window.location.href = "index.html";
-}
-
-const params = new URLSearchParams(window.location.search);
-const artistKey = params.get("artist");
-
-if (!artistKey || !ARTISTS[artistKey]) {
-  window.location.href = "index.html";
-  throw new Error("Artist not selected");
-}
-
-const artist = ARTISTS[artistKey];
-const songs = artist.songs.map(song => ({ ...song }));
-
-document.title = artist.name;
-
-const logo = document.getElementById("titleLogo");
-logo.src = artist.logo;
-logo.alt = artist.title;
-
-/* Shuffle songs */
-songs.sort(() => Math.random() - 0.5);
-
-/* --- Helper: estimate exact comparisons for merge-sort style merging --- */
-function estimateTotalComparisons(n) {
-  if (n <= 1) return 0;
-  const mid = Math.floor(n / 2);
-  return (
-    estimateTotalComparisons(mid) +
-    estimateTotalComparisons(n - mid) +
-    (n - 1) // merging two parts of total length n requires at most n-1 comparisons
-  );
-}
-
-/* --- Sorter state --- */
-let lists = songs.map(s => [s]);
-let currentMergeQueue = [];
-let currentMerge = null;
-let head1 = 0, head2 = 0;
-let rec = [];
-
-/* battle counter shown in UI is comparisonsDone + 1 */
-let comparisonsDone = 0;
-const totalComparisons = estimateTotalComparisons(songs.length);
-
-/* --- Progress update --- */
-function updateProgress() {
-  const bar = document.getElementById("progressBar");
-  const percentText = document.getElementById("progressPercent");
-  if (!bar || !percentText) return;
-  // handle edge case when totalComparisons is 0
-  const pct = totalComparisons === 0 ? 100 : Math.floor((comparisonsDone / totalComparisons) * 100);
-  bar.style.width = Math.min(100, pct) + "%";
-  percentText.textContent = Math.min(100, pct) + "%";
-}
-
-/* --- Show current pair (images + names) --- */
-function showImage() {
-  if (!currentMerge) return;
-  // battle number: show next comparison index (1-based)
-  document.getElementById("battleNumber").textContent = `Battle ${comparisonsDone + 1}`;
-  document.getElementById("leftImg").src = currentMerge.left[head1].image;
-  document.getElementById("leftName").textContent = currentMerge.left[head1].name;
-  document.getElementById("rightImg").src = currentMerge.right[head2].image;
-  document.getElementById("rightName").textContent = currentMerge.right[head2].name;
-}
-
-/* --- When a user chooses left or right --- */
-function choose(side) {
-  if (!currentMerge) return;
-
-  // record the chosen item (this is a user-driven comparison)
-  rec.push(side === "left" ? currentMerge.left[head1++] : currentMerge.right[head2++]);
-
-  // update comparison counters
-  comparisonsDone++;
-  updateProgress();
-
-  // if the other side is already exhausted, push the remainder (no extra comparisons)
-  while (head1 < currentMerge.left.length && head2 === currentMerge.right.length) {
-    rec.push(currentMerge.left[head1++]);
+  function goBack() {
+    window.location.href = "index.html";
   }
-  while (head2 < currentMerge.right.length && head1 === currentMerge.left.length) {
-    rec.push(currentMerge.right[head2++]);
+  
+  const params = new URLSearchParams(window.location.search);
+  const artistKey = params.get("artist");
+  
+  if (!artistKey || !ARTISTS[artistKey]) {
+    window.location.href = "index.html";
+    throw new Error("Artist not selected");
   }
-
-  // if both heads reached ends, finalize merged array
-  if (head1 === currentMerge.left.length && head2 === currentMerge.right.length) {
-    currentMerge.merged.push(...rec);
-    rec = [];
-    prepareNextMerge();
-  } else {
-    // there are still items to compare in this merge
-    showImage();
+  
+  const artist = ARTISTS[artistKey];
+  const songs = artist.songs.map(song => ({ ...song }));
+  
+  document.title = artist.name;
+  
+  const logo = document.getElementById("titleLogo");
+  logo.src = artist.logo;
+  logo.alt = artist.title;
+  
+  /* Shuffle songs */
+  songs.sort(() => Math.random() - 0.5);
+  
+  /* --- Helper: estimate exact comparisons for merge-sort style merging --- */
+  function estimateTotalComparisons(n) {
+    if (n <= 1) return 0;
+    const mid = Math.floor(n / 2);
+    return (
+      estimateTotalComparisons(mid) +
+      estimateTotalComparisons(n - mid) +
+      (n - 1) // merging two parts of total length n requires at most n-1 comparisons
+    );
   }
-
-  // stop listening for keys when finished
-  if (comparisonsDone >= totalComparisons) {
-    document.removeEventListener("keydown", keyListener);
+  
+  /* --- Sorter state --- */
+  let lists = songs.map(s => [s]);
+  let currentMergeQueue = [];
+  let currentMerge = null;
+  let head1 = 0, head2 = 0;
+  let rec = [];
+  
+  /* battle counter shown in UI is comparisonsDone + 1 */
+  let comparisonsDone = 0;
+  const totalComparisons = estimateTotalComparisons(songs.length);
+  
+  /* --- Progress update --- */
+  function updateProgress() {
+    const bar = document.getElementById("progressBar");
+    const percentText = document.getElementById("progressPercent");
+    if (!bar || !percentText) return;
+    // handle edge case when totalComparisons is 0
+    const pct = totalComparisons === 0 ? 100 : Math.floor((comparisonsDone / totalComparisons) * 100);
+    bar.style.width = Math.min(100, pct) + "%";
+    percentText.textContent = Math.min(100, pct) + "%";
   }
-}
-
-/* --- Move to next merge or round --- */
-function prepareNextMerge() {
-  if (currentMergeQueue.length > 0) {
-    currentMerge = currentMergeQueue.shift();
-    head1 = 0;
-    head2 = 0;
-    showImage();
-  } else {
-    prepareNextRound();
+  
+  /* --- Show current pair (images + names) --- */
+  function showImage() {
+    if (!currentMerge) return;
+    // battle number: show next comparison index (1-based)
+    document.getElementById("battleNumber").textContent = `Battle ${comparisonsDone + 1}`;
+    document.getElementById("leftImg").src = currentMerge.left[head1].image;
+    document.getElementById("leftName").textContent = currentMerge.left[head1].name;
+    document.getElementById("rightImg").src = currentMerge.right[head2].image;
+    document.getElementById("rightName").textContent = currentMerge.right[head2].name;
   }
-}
-
-/* --- Build next round's merge queue from lists --- */
-function prepareNextRound() {
-  let newLists = [];
-  currentMergeQueue = [];
-
-  while (lists.length > 0) {
-    const left = lists.shift();
-    const right = lists.shift();
-    const merged = [];
-    if (right) {
-      currentMergeQueue.push({ left, right, merged });
-      newLists.push(merged);
-    } else {
-      newLists.push(left);
+  
+  /* --- When a user chooses left or right --- */
+  function choose(side) {
+    if (!currentMerge) return;
+  
+    // record the chosen item (this is a user-driven comparison)
+    rec.push(side === "left" ? currentMerge.left[head1++] : currentMerge.right[head2++]);
+  
+    // update comparison counters
+    comparisonsDone++;
+    updateProgress();
+  
+    // if the other side is already exhausted, push the remainder (no extra comparisons)
+    while (head1 < currentMerge.left.length && head2 === currentMerge.right.length) {
+      rec.push(currentMerge.left[head1++]);
     }
-  }
-
-  lists = newLists;
-
-  if (currentMergeQueue.length > 0) {
-    currentMerge = currentMergeQueue.shift();
-    head1 = 0; head2 = 0; rec = [];
-    // if currentMerge.left or right are empty (shouldn't happen), guard:
-    if (currentMerge.left.length === 0 && currentMerge.right.length === 0) {
+    while (head2 < currentMerge.right.length && head1 === currentMerge.left.length) {
+      rec.push(currentMerge.right[head2++]);
+    }
+  
+    // if both heads reached ends, finalize merged array
+    if (head1 === currentMerge.left.length && head2 === currentMerge.right.length) {
+      currentMerge.merged.push(...rec);
+      rec = [];
       prepareNextMerge();
     } else {
+      // there are still items to compare in this merge
       showImage();
     }
-  } else {
-    showResult();
+  
+    // stop listening for keys when finished
+    if (comparisonsDone >= totalComparisons) {
+      document.removeEventListener("keydown", keyListener);
+    }
   }
-}
-
-/* --- Show final ranking --- */
-function showResult() {
-  document.getElementById("choices").style.display = "none";
-  const resultDiv = document.getElementById("result");
-  resultDiv.style.display = "block";
-
-  const rankingList = document.getElementById("ranking");
-  rankingList.innerHTML = ""; // clear previous results
-
-  (lists[0] || []).forEach((song, index) => {
-    const li = document.createElement("li");
-    li.classList.add("result-item");
-
-    // number text
-    const numberSpan = document.createElement("span");
-    numberSpan.textContent = `${index + 1}.`;
-
-    // image
-    const img = document.createElement("img");
-    img.src = song.image;
-    img.alt = song.name;
-    img.classList.add("result-image");
-
-    // song name
-    const text = document.createElement("span");
-    text.textContent = song.name;
-
-    li.appendChild(numberSpan);
-    li.appendChild(img);
-    li.appendChild(text);
-    rankingList.appendChild(li);
-  });
-
-  comparisonsDone = totalComparisons;
+  
+  /* --- Move to next merge or round --- */
+  function prepareNextMerge() {
+    if (currentMergeQueue.length > 0) {
+      currentMerge = currentMergeQueue.shift();
+      head1 = 0;
+      head2 = 0;
+      showImage();
+    } else {
+      prepareNextRound();
+    }
+  }
+  
+  /* --- Build next round's merge queue from lists --- */
+  function prepareNextRound() {
+    let newLists = [];
+    currentMergeQueue = [];
+  
+    while (lists.length > 0) {
+      const left = lists.shift();
+      const right = lists.shift();
+      const merged = [];
+      if (right) {
+        currentMergeQueue.push({ left, right, merged });
+        newLists.push(merged);
+      } else {
+        newLists.push(left);
+      }
+    }
+  
+    lists = newLists;
+  
+    if (currentMergeQueue.length > 0) {
+      currentMerge = currentMergeQueue.shift();
+      head1 = 0; head2 = 0; rec = [];
+      // if currentMerge.left or right are empty (shouldn't happen), guard:
+      if (currentMerge.left.length === 0 && currentMerge.right.length === 0) {
+        prepareNextMerge();
+      } else {
+        showImage();
+      }
+    } else {
+      showResult();
+    }
+  }
+  
+  /* --- Show final ranking --- */
+  function showResult() {
+    document.getElementById("choices").style.display = "none";
+    const resultDiv = document.getElementById("result");
+    resultDiv.style.display = "block";
+  
+    const rankingList = document.getElementById("ranking");
+    rankingList.innerHTML = ""; // clear previous results
+  
+    (lists[0] || []).forEach((song, index) => {
+      const li = document.createElement("li");
+      li.classList.add("result-item");
+  
+      // number text
+      const numberSpan = document.createElement("span");
+      numberSpan.textContent = `${index + 1}.`;
+  
+      // image
+      const img = document.createElement("img");
+      img.src = song.image;
+      img.alt = song.name;
+      img.classList.add("result-image");
+  
+      // song name
+      const text = document.createElement("span");
+      text.textContent = song.name;
+  
+      li.appendChild(numberSpan);
+      li.appendChild(img);
+      li.appendChild(text);
+      rankingList.appendChild(li);
+    });
+  
+    comparisonsDone = totalComparisons;
+    updateProgress();
+  }
+  
+  /* --- Keyboard listener --- */
+  function keyListener(e) {
+    if (comparisonsDone >= totalComparisons) return;
+    if (e.key === "ArrowLeft") choose("left");
+    if (e.key === "ArrowRight") choose("right");
+  }
+  document.addEventListener("keydown", keyListener);
+  
+  /* --- Initialize & start --- */
+  lists = songs.map(s => [s]); // re-init lists (safe)
+  prepareNextRound();
   updateProgress();
-}
-
-/* --- Keyboard listener --- */
-function keyListener(e) {
-  if (comparisonsDone >= totalComparisons) return;
-  if (e.key === "ArrowLeft") choose("left");
-  if (e.key === "ArrowRight") choose("right");
-}
-document.addEventListener("keydown", keyListener);
-
-/* --- Initialize & start --- */
-lists = songs.map(s => [s]); // re-init lists (safe)
-prepareNextRound();
-updateProgress();
 </script>
 
 </html>
