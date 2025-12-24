@@ -1,5 +1,3 @@
-alert("artists.js loaded");
-
 window.ARTISTS = {
   magdalena_bay: {
     title: "Magdalena Bay Song Sorter",
@@ -425,5 +423,3 @@ window.ARTISTS = {
       { name: "Romeo", image: "images/pinkpantheress/fancy-that.jpeg" }
     ]
 };
-
-window.ARTISTS = ARTISTS;
