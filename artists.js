@@ -1,3 +1,5 @@
+alert("artists.js loaded");
+
 window.ARTISTS = {
   magdalena_bay: {
     title: "Magdalena Bay Song Sorter",
