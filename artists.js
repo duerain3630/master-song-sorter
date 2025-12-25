@@ -6,14 +6,6 @@ const ARTISTS = {
       
       // Singles
       { name: "Voc Pop", image: "images/magdalena-bay/voc-pop.jpeg" },
-      { name: "Head Over Heels", image: "images/magdalena-bay/head-over-heels.jpeg" },
-      { name: "#wastehistime", image: "images/magdalena-bay/wastehistime.jpeg" },
-      { name: "Neon", image: "images/magdalena-bay/neon.jpeg" },
-      { name: "Set Me Off", image: "images/magdalena-bay/set-me-off.jpeg" },
-      { name: "Redbone", image: "images/magdalena-bay/redbone.jpeg" },
-      { name: "Drive Alone", image: "images/magdalena-bay/drive-alone.jpeg" },
-      { name: "Move Slow", image: "images/magdalena-bay/move-slow.jpeg" },
-      { name: "Waking Up", image: "images/magdalena-bay/waking-up.jpeg" },
       { name: "The Girls", image: "images/magdalena-bay/the-girls.jpeg" },
       { name: "Ghost", image: "images/magdalena-bay/ghost.jpeg" },
       { name: "Money Lover", image: "images/magdalena-bay/money-lover.jpeg" },
@@ -36,7 +28,19 @@ const ARTISTS = {
       { name: "Death & Romance", image: "images/magdalena-bay/death-romance.jpeg" },
       { name: "Image", image: "images/magdalena-bay/image.jpeg" },
       { name: "Tunnel Vision", image: "images/magdalena-bay/tunnel-vision.jpeg" },
-      
+
+      // daypop
+      { name: "Head Over Heels", image: "images/magdalena-bay/head-over-heels.jpeg" },
+      { name: "#wastehistime", image: "images/magdalena-bay/wastehistime.jpeg" },
+      { name: "Set Me Off", image: "images/magdalena-bay/set-me-off.jpeg" },
+      { name: "Waking Up", image: "images/magdalena-bay/waking-up.jpeg" },
+
+      // nightpop
+      { name: "Neon", image: "images/magdalena-bay/neon.jpeg" },
+      { name: "Redbone", image: "images/magdalena-bay/redbone.jpeg" },
+      { name: "Drive Alone", image: "images/magdalena-bay/drive-alone.jpeg" },
+      { name: "Move Slow", image: "images/magdalena-bay/move-slow.jpeg" },
+
       // mini mix, vol. 1
       { name: "Intro", image: "images/magdalena-bay/mini-mix-vol-1.jpeg" },
       { name: "Afternoon in Heaven", image: "images/magdalena-bay/mini-mix-vol-1.jpeg" },
@@ -55,12 +59,12 @@ const ARTISTS = {
       { name: "Sky2Fall (Reprise)", image: "images/magdalena-bay/mini-mix-vol-2.jpeg" },
       
       // Mercurial World
+      { name: "Hysterical Us", image: "images/magdalena-bay/mercurial-world.jpeg" },
       { name: "The End", image: "images/magdalena-bay/mercurial-world.jpeg" },
       { name: "Mercurial World", image: "images/magdalena-bay/mercurial-world.jpeg" },
       { name: "Dawning of the Season", image: "images/magdalena-bay/mercurial-world.jpeg" },
       { name: "Something for 2", image: "images/magdalena-bay/mercurial-world.jpeg" },
       { name: "Halfway", image: "images/magdalena-bay/mercurial-world.jpeg" },
-      { name: "Hysterical Us", image: "images/magdalena-bay/mercurial-world.jpeg" },
       { name: "Prophecy", image: "images/magdalena-bay/mercurial-world.jpeg" },
       { name: "Follow the Leader", image: "images/magdalena-bay/mercurial-world.jpeg" },
       { name: "Domino", image: "images/magdalena-bay/mercurial-world.jpeg" },
@@ -68,13 +72,13 @@ const ARTISTS = {
       { name: "The Beginning", image: "images/magdalena-bay/mercurial-world.jpeg" },
       
       // Mercurial World (Deluxe)
-      { name: "secret 1", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
+      { name: "All You Do", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
       { name: "Unconditional", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
+      { name: "secret 1", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
       { name: "secrets 2-9: medley", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
       { name: "secret 10", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
       { name: "secret 11", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
       { name: "secret 12", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
-      { name: "All You Do", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
       { name: "secret 13", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
       { name: "secret 14", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
       { name: "secret 15", image: "images/magdalena-bay/mercurial-world-deluxe.jpeg" },
@@ -130,7 +134,7 @@ const ARTISTS = {
       { name: "Tembló", image: "images/ninos-del-cerro/temblo.jpeg" },
       { name: "Canto al Mediodía", image: "images/ninos-del-cerro/canto-al-mediodia.jpeg" },
       { name: "Seis de Enero", image: "images/ninos-del-cerro/seis-de-enero.jpeg" },    
-
+      
       // Nonato Coo
       { name: "Nonato Coo", image: "images/ninos-del-cerro/nonato-coo.jpeg" },
       { name: "Ropa de Verano", image: "images/ninos-del-cerro/nonato-coo.jpeg" },
@@ -196,6 +200,31 @@ const ARTISTS = {
       { name: "Laser Quest", image: "images/kero-kero-bonito/laser-quest.jpeg" },
       { name: "Fortune Teller", image: "images/kero-kero-bonito/fortune-teller.jpeg" },
       { name: "Wherever You Go", image: "images/kero-kero-bonito/wherever-you-go.jpeg" },
+      { name: "Why Aren’t You Dancing?", image: "images/kero-kero-bonito/why-arent-you-dancing.jpeg" },
+      { name: "Astronomy for Two", image: "images/kero-kero-bonito/why-arent-you-dancing.jpeg" },
+      { name: "Bonito Shopping", image: "images/kero-kero-bonito/bonito-shopping.jpeg" },
+      { name: "Fans (Are So Cool)", image: "images/kero-kero-bonito/fans-are-so-cool.jpeg" },
+      { name: "Flamingo", image: "images/kero-kero-bonito/flamingo.jpeg" },
+      { name: "Build It Up", image: "images/kero-kero-bonito/build-it-up.jpeg" },
+      { name: "Picture This", image: "images/kero-kero-bonito/picture-this.jpeg" },
+      { name: "Chicken", image: "images/kero-kero-bonito/chicken.jpeg" },
+      { name: "Lipslap", image: "images/kero-kero-bonito/lipslap.jpeg" },
+      { name: "Break", image: "images/kero-kero-bonito/break.jpeg" },
+      { name: "Graduation", image: "images/kero-kero-bonito/graduation.jpeg" },
+      { name: "Trampoline", image: "images/kero-kero-bonito/trampoline.jpeg" },
+      { name: "Forever Summer Holiday", image: "images/kero-kero-bonito/forever-summer-holiday.jpeg" },
+      { name: "Only Acting", image: "images/kero-kero-bonito/only-acting.jpeg" },
+      { name: "Time Today", image: "images/kero-kero-bonito/time-today.jpeg" },
+      { name: "Make Believe", image: "images/kero-kero-bonito/make-believe.jpeg" },
+      { name: "World Tour 2018", image: "images/kero-kero-bonito/make-believe.jpeg" },
+      { name: "Swimming", image: "images/kero-kero-bonito/swimming-the-open-road.jpeg" },
+      { name: "The Open Road", image: "images/kero-kero-bonito/swimming-the-open-road.jpeg" },
+      { name: "When the Fires Come", image: "images/kero-kero-bonito/when-the-fires-come.jpeg" },
+      { name: "It’s Bugsnax!", image: "images/kero-kero-bonito/its-bugsnax.jpeg" },
+      { name: "The Princess and the Clock", image: "images/kero-kero-bonito/the-princess-and-the-clock.jpeg" },
+      { name: "The Sneaker Dance", image: "images/kero-kero-bonito/the-sneaker-dance.jpeg" },
+
+      // Intro Bonito
       { name: "Bonito Intro", image: "images/kero-kero-bonito/bonito-intro.jpeg" },
       { name: "Intro Bonito", image: "images/kero-kero-bonito/intro-bonito.jpeg" },
       { name: "Sick Beat", image: "images/kero-kero-bonito/sick-beat.jpeg" },
@@ -211,43 +240,20 @@ const ARTISTS = {
       { name: "Let’s Go to the Forest", image: "images/kero-kero-bonito/lets-go-to-the-forest.jpeg" },
       { name: "Small Town", image: "images/kero-kero-bonito/small-town.jpeg" },
       { name: "I’d Rather Sleep", image: "images/kero-kero-bonito/id-rather-sleep.jpeg" },
-      { name: "Bonito Shopping", image: "images/kero-kero-bonito/bonito-shopping.jpeg" },
-      { name: "Fans (Are So Cool)", image: "images/kero-kero-bonito/fans-are-so-cool.jpeg" },
-      { name: "Flamingo", image: "images/kero-kero-bonito/flamingo.jpeg" },
-      { name: "Build It Up", image: "images/kero-kero-bonito/build-it-up.jpeg" },
-      { name: "Chicken", image: "images/kero-kero-bonito/chicken.jpeg" },
+
+      // Bonito Generation
       { name: "Waking Up", image: "images/kero-kero-bonito/waking-up.jpeg" },
       { name: "Heard a Song", image: "images/kero-kero-bonito/heard-a-song.jpeg" },
-      { name: "Graduation", image: "images/kero-kero-bonito/graduation.jpeg" },
       { name: "Fish Bowl", image: "images/kero-kero-bonito/fish-bowl.jpeg" },
       { name: "Big City", image: "images/kero-kero-bonito/big-city.jpeg" },
-      { name: "Break", image: "images/kero-kero-bonito/break.jpeg" },
-      { name: "Lipslap", image: "images/kero-kero-bonito/lipslap.jpeg" },
       { name: "Try Me", image: "images/kero-kero-bonito/try-me.jpeg" },
       { name: "Paintbrush", image: "images/kero-kero-bonito/paintbrush.jpeg" },
-      { name: "Trampoline", image: "images/kero-kero-bonito/trampoline.jpeg" },
-      { name: "Picture This", image: "images/kero-kero-bonito/picture-this.jpeg" },
       { name: "Hey Parents", image: "images/kero-kero-bonito/hey-parents.jpeg" },
-      { name: "Forever Summer Holiday", image: "images/kero-kero-bonito/forever-summer-holiday.jpeg" },
-      { name: "Only Acting", image: "images/kero-kero-bonito/only-acting.jpeg" },
-      { name: "Time Today", image: "images/kero-kero-bonito/time-today.jpeg" },
-      { name: "When the Fires Come", image: "images/kero-kero-bonito/when-the-fires-come.jpeg" },
-      { name: "It’s Bugsnax!", image: "images/kero-kero-bonito/its-bugsnax.jpeg" },
-      { name: "The Princess and the Clock", image: "images/kero-kero-bonito/the-princess-and-the-clock.jpeg" },
-      { name: "The Sneaker Dance", image: "images/kero-kero-bonito/the-sneaker-dance.jpeg" },
-
-      // Why Aren't You Dancing?
-      { name: "Why Aren’t You Dancing?", image: "images/kero-kero-bonito/why-arent-you-dancing.jpeg" },
-      { name: "Astronomy for Two", image: "images/kero-kero-bonito/why-arent-you-dancing.jpeg" },
-
+      
       // TOTEP
       { name: "The One True Path", image: "images/kero-kero-bonito/totep.jpeg" },
       { name: "You Know How It Is", image: "images/kero-kero-bonito/totep.jpeg" },
       { name: "Cinema", image: "images/kero-kero-bonito/totep.jpeg" },
-
-      // Make Believe
-      { name: "Make Believe", image: "images/kero-kero-bonito/make-believe.jpeg" },
-      { name: "World Tour 2018", image: "images/kero-kero-bonito/make-believe.jpeg" },
 
       // Time 'n' Place
       { name: "Outside", image: "images/kero-kero-bonito/time-n-place.jpeg" },
@@ -258,10 +264,6 @@ const ARTISTS = {
       { name: "If I’d Known", image: "images/kero-kero-bonito/time-n-place.jpeg" },
       { name: "Sometimes", image: "images/kero-kero-bonito/time-n-place.jpeg" },
       { name: "Rest Stop", image: "images/kero-kero-bonito/time-n-place.jpeg" },
-
-      // Swimming / The Open Road
-      { name: "Swimming", image: "images/kero-kero-bonito/swimming-the-open-road.jpeg" },
-      { name: "The Open Road", image: "images/kero-kero-bonito/swimming-the-open-road.jpeg" },
 
       // Civilisation I
       { name: "Battle Lines", image: "images/kero-kero-bonito/civilisation-i.jpeg" },
@@ -286,23 +288,15 @@ const ARTISTS = {
       { name: "Wonder Gently", image: "images/george-clanton/wonder-gently.jpeg" },
       { name: "Make It Forever", image: "images/george-clanton/make-it-forever.jpeg" },
       { name: "Dumb", image: "images/george-clanton/dumb.jpeg" },
+      { name: "Crash Pad", image: "images/george-clanton/crash-pad-king-for-a-day.jpeg" },
+      { name: "King for a Day", image: "images/george-clanton/crash-pad-king-for-a-day.jpeg" },
+      { name: "Out of the Blue", image: "images/george-clanton/under-your-window-out-of-the-blue.jpeg" },
+      { name: "Under Your Window", image: "images/george-clanton/under-your-window-out-of-the-blue.jpeg" },
+      { name: "Aurora Summer", image: "images/george-clanton/aurora-summer.jpeg" },
+      { name: "George & Nick (Guitar Arpeggio Jam)", image: "images/george-clanton/aurora-summer.jpeg" },
       { name: "I Been Young", image: "images/george-clanton/i-been-young.jpeg" },
       { name: "Justify Your Life", image: "images/george-clanton/justify-your-life.jpeg" },
       { name: "Vapor King / SubReal", image: "images/george-clanton/vapor-king-subreal.jpeg" },
-
-      // Crash Pad / King for a Day
-      { name: "Crash Pad", image: "images/george-clanton/crash-pad-king-for-a-day.jpeg" },
-      { name: "King for a Day", image: "images/george-clanton/crash-pad-king-for-a-day.jpeg" },
-
-      // Under Your Window / Out of the Blue
-      { name: "Under Your Window", image: "images/george-clanton/under-your-window-out-of-the-blue.jpeg" },
-      { name: "Out of the Blue", image: "images/george-clanton/under-your-window-out-of-the-blue.jpeg" },
-
-      // Aurora Summer - George Clanton and Nick Hexum (Deluxe)
-      { name: "Aurora Summer", image: "images/george-clanton/aurora-summer.jpeg" },
-      { name: "George & Nick (Guitar Arpeggio Jam)", image: "images/george-clanton/aurora-summer.jpeg" },
-
-      // Summer 2000 Baby / Take a Trip
       { name: "Summer 2000 Baby", image: "images/george-clanton/summer-2000-baby-take-a-trip.jpeg" },
       { name: "Take a Trip", image: "images/george-clanton/summer-2000-baby-take-a-trip.jpeg" },
 
@@ -312,7 +306,7 @@ const ARTISTS = {
       { name: "Purity", image: "images/george-clanton/100-electronica.jpeg" },
       { name: "Bleed", image: "images/george-clanton/100-electronica.jpeg" },
       { name: "Warmspot", image: "images/george-clanton/100-electronica.jpeg" },
-      { name: "It Makes the Babies Want to Cry", image: "images/george-clanton/100-electronica.jpeg" },
+      { name: "It Makes the Babies Want to Cry", image: "images/george-clanton/wonder-gently.jpeg" },
       { name: "Innocence", image: "images/george-clanton/100-electronica.jpeg" },
       { name: "Kill You in Bed", image: "images/george-clanton/100-electronica.jpeg" },
 
@@ -325,7 +319,7 @@ const ARTISTS = {
       { name: "You Lost Me There", image: "images/george-clanton/slide.jpeg" },
       { name: "Encore", image: "images/george-clanton/slide.jpeg" },
       { name: "Walk Slowly", image: "images/george-clanton/slide.jpeg" },
-
+      
       // George Clanton and Nick Hexum
       { name: "Driving in My Car", image: "images/george-clanton/george-clanton-and-nick-hexum.jpeg" },
       { name: "Topanga State of Mind", image: "images/george-clanton/george-clanton-and-nick-hexum.jpeg" },
@@ -345,7 +339,7 @@ const ARTISTS = {
       { name: "F.U.M.L.", image: "images/george-clanton/ooh-rap-i-ya.jpeg" },
       { name: "Ooh Rap I Ya", image: "images/george-clanton/ooh-rap-i-ya.jpeg" },
       { name: "For You, I Will", image: "images/george-clanton/ooh-rap-i-ya.jpeg" },
-
+      
       // Fauxllennium
       { name: "Everything Blue", image: "images/george-clanton/fauxllennium.jpeg" },
       { name: "Fauxllennium", image: "images/george-clanton/fauxllennium.jpeg" },
@@ -379,7 +373,6 @@ const ARTISTS = {
       { name: "Last valentines", image: "images/pinkpantheress/last-valentines.jpeg" },
       { name: "Passion", image: "images/pinkpantheress/passion.jpeg" },
       { name: "Just for me", image: "images/pinkpantheress/just-for-me.jpeg" },
-      { name: "I must apologise", image: "images/pinkpantheress/i-must-apologise.jpeg" },
       { name: "Where you are", image: "images/pinkpantheress/where-you-are.jpeg" },
       { name: "Picture in my mind", image: "images/pinkpantheress/picture-in-my-mind.jpeg" },
       { name: "Do you miss me?", image: "images/pinkpantheress/do-you-miss-me.jpeg" },
@@ -394,6 +387,7 @@ const ARTISTS = {
       { name: "Close to you", image: "images/pinkpantheress/close-to-you.jpeg" },
 
       // to hell with it
+      { name: "I must apologise", image: "images/pinkpantheress/to-hell-with-it.jpeg" },
       { name: "Reason", image: "images/pinkpantheress/to-hell-with-it.jpeg" },
       { name: "All my friends know", image: "images/pinkpantheress/to-hell-with-it.jpeg" },
       { name: "Nineteen", image: "images/pinkpantheress/to-hell-with-it.jpeg" },
