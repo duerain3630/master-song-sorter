@@ -1,4 +1,4 @@
-window.ARTISTS = {
+const ARTISTS = {
   magdalena_bay: {
     title: "Magdalena Bay Song Sorter",
     logo: "images/magdalena-bay/magdalena-bay-logo.png",
@@ -422,4 +422,5 @@ window.ARTISTS = {
       { name: "Nice to Know You", image: "images/pinkpantheress/fancy-that.jpeg" },
       { name: "Romeo", image: "images/pinkpantheress/fancy-that.jpeg" }
     ]
+  }
 };
