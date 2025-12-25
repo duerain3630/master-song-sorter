@@ -1,4 +1,4 @@
-const ARTISTS = {
+window.ARTISTS = {
   magdalena_bay: {
     title: "Magdalena Bay Song Sorter",
     logo: "images/magdalena-bay/magdalena-bay-logo.png",

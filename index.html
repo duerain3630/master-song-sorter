@@ -24,8 +24,9 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
+      max-width: 900px;
       width: 100%;
-      max-width: 800px;
+      margin: 0 auto;
     }
 
     .artist {
@@ -37,8 +38,8 @@
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      border-radius: 12px;
-      transition: transform 0.2s;
+      border-radius: 10px;
+      display: block;
     }
 
     .artist:hover img {
@@ -47,7 +48,7 @@
 
     .artist span {
       display: block;
-      margin-top: 10px;
+      margin-top: 8px;
       font-weight: 600;
     }
   </style>
@@ -66,23 +67,22 @@
       <img src="images/ninos-del-cerro/thumb.jpeg">
       <span>Niños del Cerro</span>
     </div>
-  </div>
 
     <div class="artist" onclick="go('kero_kero_bonito')">
-  <img src="images/kero_kero_bonito/thumb.jpeg">
-  <span>Kero Kero Bonito</span>
-</div>
+      <img src="images/kero-kero-bonito/thumb.jpeg">
+      <span>Kero Kero Bonito</span>
+    </div>
 
     <div class="artist" onclick="go('george_clanton')">
-  <img src="images/george_clanton/thumb.jpeg">
-  <span>George Clanton</span>
-</div>
+      <img src="images/george-clanton/thumb.jpeg">
+      <span>George Clanton</span>
+    </div>
 
     <div class="artist" onclick="go('pinkpantheress')">
-  <img src="images/pinkpantheress/thumb.jpeg">
-  <span>PinkPantheress</span>
-</div>
-
+      <img src="images/pinkpantheress/thumb.jpeg">
+      <span>PinkPantheress</span>
+    </div>
+  </div>
 
   <script>
     function go(artist) {
