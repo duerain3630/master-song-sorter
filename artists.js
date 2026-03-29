@@ -423,16 +423,6 @@ const ARTISTS = {
     logo: "images/gorillaz/gorillaz-logo.png",
     songs: [
 
-      { name: "911", image: "images/gorillaz/911.jpeg" },
-      { name: "Film Music", image: "images/gorillaz/tomorrow-comes-today-2.jpeg" },
-      { name: "Samba at 13", image: "images/gorillaz/samba-at-13.jpeg" },
-      { name: "Film Trailer Music", image: "images/gorillaz/d-sides-2.jpeg" },
-      { name: "Doncamatic", image: "images/gorillaz/doncamatic.jpeg" },
-      { name: "DoYaThing", image: "images/gorillaz/doyathing.jpeg" },
-      { name: "Sleeping Powder", image: "images/gorillaz/andromeda.jpeg" },
-      { name: "Song Machine Theme Tune", image: "images/gorillaz/song-machine-season-one-strange-timez-1.jpeg" },
-      { name: "Taxi Back to 80s Reykjavík", image: "images/gorillaz/song-machine-season-one-strange-timez-3.jpeg" },
-
       // Gorillaz
       { name: "Clint Eastwood", image: "images/gorillaz/clint-eastwood.jpeg" },
       { name: "Re-Hash", image: "images/gorillaz/gorillaz.jpeg" },
@@ -451,13 +441,15 @@ const ARTISTS = {
       { name: "M1 A1", image: "images/gorillaz/gorillaz.jpeg" },
 
       // G-Sides
-      { name: "Dracula", image: "images/gorillaz/clint-eastwood.jpeg" },
-      { name: "The Sounder", image: "images/gorillaz/rock-the-house.jpeg" },
-      { name: "Faust", image: "images/gorillaz/rock-the-house.jpeg" },
-      { name: "Ghost Train", image: "images/gorillaz/rock-the-house.jpeg" },
-      { name: "Hip Albatross", image: "images/gorillaz/19-2000.jpeg" },
-      { name: "Left Hand Suzuki Method", image: "images/gorillaz/19-2000.jpeg" },
-      { name: "12D3", image: "images/gorillaz/tomorrow-comes-today-1.jpeg" },
+      { name: "Dracula", image: "images/gorillaz/g-sides.jpeg" },
+      { name: "The Sounder", image: "images/gorillaz/g-sides.jpeg" },
+      { name: "Faust", image: "images/gorillaz/g-sides.jpeg" },
+      { name: "Ghost Train", image: "images/gorillaz/g-sides.jpeg" },
+      { name: "Hip Albatross", image: "images/gorillaz/g-sides.jpeg" },
+      { name: "Left Hand Suzuki Method", image: "images/gorillaz/g-sides.jpeg" },
+      { name: "12D3", image: "images/gorillaz/g-sides.jpeg" },
+      { name: "911", image: "images/gorillaz/911.jpeg" },
+      { name: "Film Music", image: "images/gorillaz/tomorrow-comes-today-2.jpeg" },
 
       // Demon Days
       { name: "Feel Good Inc.", image: "images/gorillaz/feel-good-inc-1.jpeg" },
@@ -466,7 +458,7 @@ const ARTISTS = {
       { name: "Kids With Guns", image: "images/gorillaz/kids-with-guns.jpeg" },
       { name: "O Green World", image: "images/gorillaz/demon-days.jpeg" },
       { name: "Dirty Harry", image: "images/gorillaz/dirty-harry-1.jpeg" },
-      { name: "El Mañana", image: "images/gorillaz/el-manana-kids-with-guns.jpeg" },
+      { name: "El Mañana", image: "images/gorillaz/el-manana.jpeg" },
       { name: "Every Planet We Reach is Dead", image: "images/gorillaz/demon-days.jpeg" },
       { name: "November Has Come", image: "images/gorillaz/demon-days.jpeg" },
       { name: "All Alone", image: "images/gorillaz/demon-days.jpeg" },
@@ -477,18 +469,20 @@ const ARTISTS = {
       { name: "Demon Days", image: "images/gorillaz/demon-days.jpeg" },
 
       // D-Sides
-      { name: "68 State", image: "images/gorillaz/feel-good-inc-3.jpeg" },
-      { name: "People", image: "images/gorillaz/dare-1.jpeg" },
-      { name: "Hongkongaton", image: "images/gorillaz/dirty-harry-2.jpeg" },
+      { name: "Samba at 13", image: "images/gorillaz/samba-at-13.jpeg" },
+      { name: "68 State", image: "images/gorillaz/d-sides-1.jpeg" },
+      { name: "People", image: "images/gorillaz/d-sides-1.jpeg" },
+      { name: "Hongkongaton", image: "images/gorillaz/d-sides-1.jpeg" },
       { name: "We Are Happy Landfill", image: "images/gorillaz/d-sides-1.jpeg" },
       { name: "Hong Kong", image: "images/gorillaz/d-sides-1.jpeg" },
-      { name: "Highway (Under Construction)", image: "images/gorillaz/dare-2.jpeg" },
+      { name: "Highway (Under Construction)", image: "images/gorillaz/d-sides-1.jpeg" },
       { name: "Rockit", image: "images/gorillaz/d-sides-1.jpeg" },
       { name: "The Swagga", image: "images/gorillaz/d-sides-1.jpeg" },
-      { name: "Bill Murray", image: "images/gorillaz/feel-good-inc-2.jpeg" },
-      { name: "Murdoc is God", image: "images/gorillaz/dirty-harry-3.jpeg" },
-      { name: "Spitting Out the Demons", image: "images/gorillaz/feel-good-inc-1.jpeg" },
-      { name: "Stop the Dams", image: "images/gorillaz/el-manana.jpeg" },
+      { name: "Bill Murray", image: "images/gorillaz/d-sides-1.jpeg" },
+      { name: "Murdoc is God", image: "images/gorillaz/d-sides-1.jpeg" },
+      { name: "Spitting Out the Demons", image: "images/gorillaz/d-sides-1.jpeg" },
+      { name: "Stop the Dams", image: "images/gorillaz/d-sides-1.jpeg" },
+      { name: "Film Trailer Music", image: "images/gorillaz/d-sides-2.jpeg" },
 
       // Plastic Beach
       { name: "Stylo", image: "images/gorillaz/stylo.jpeg" },
@@ -509,6 +503,7 @@ const ARTISTS = {
       { name: "Pirate Jet", image: "images/gorillaz/plastic-beach-4.jpeg" },
       { name: "Pirate’s Progress", image: "images/gorillaz/plastic-beach-2.jpeg" },
       { name: "Three Hearts, Seven Seas, Twelve Moons", image: "images/gorillaz/plastic-beach-2.jpeg" },
+      { name: "Doncamatic", image: "images/gorillaz/doncamatic.jpeg" },
 
       // The Fall
       { name: "Phoner to Arizona", image: "images/gorillaz/the-fall.jpeg" },
@@ -526,6 +521,7 @@ const ARTISTS = {
       { name: "Bobby in Phoenix", image: "images/gorillaz/the-fall.jpeg" },
       { name: "California & The Slipping of the Sun", image: "images/gorillaz/the-fall.jpeg" },
       { name: "Seattle Yodel", image: "images/gorillaz/the-fall.jpeg" },
+      { name: "DoYaThing", image: "images/gorillaz/doyathing.jpeg" },
 
       // Humanz
       { name: "Saturnz Barz", image: "images/gorillaz/saturnz-barz.jpeg" },
@@ -554,13 +550,14 @@ const ARTISTS = {
       { name: "Out of Body", image: "images/gorillaz/humanz-2.jpeg" },
       { name: "Ticker Tape", image: "images/gorillaz/humanz-2.jpeg" },
       { name: "Circle of Friendz", image: "images/gorillaz/humanz-2.jpeg" },
+      { name: "Sleeping Powder", image: "images/gorillaz/andromeda.jpeg" },
+      { name: "Garage Palace", image: "images/gorillaz/garage-palace.jpeg" },
       { name: "Long Beach", image: "images/gorillaz/humanz-3.jpeg" },
       { name: "Colombians", image: "images/gorillaz/humanz-3.jpeg" },
       { name: "Duetz", image: "images/gorillaz/humanz-3.jpeg" },
       { name: "Midnite Float", image: "images/gorillaz/humanz-3.jpeg" },
       { name: "Grilling With His Face", image: "images/gorillaz/humanz-3.jpeg" },
       { name: "Five Whales in a Dream", image: "images/gorillaz/humanz-3.jpeg" },
-      { name: "Garage Palace", image: "images/gorillaz/garage-palace.jpeg" },
       { name: "Phoenix on the Hill", image: "images/gorillaz/humanz-3.jpeg" },
       { name: "Tranzformer", image: "images/gorillaz/humanz-3.jpeg" },
 
@@ -578,6 +575,7 @@ const ARTISTS = {
       { name: "Souk Eye", image: "images/gorillaz/the-now-now.jpeg" },
 
       // Song Machine, Season One: Strange Timez
+      { name: "Song Machine Theme Tune", image: "images/gorillaz/song-machine-season-one-strange-timez-1.jpeg" },
       { name: "Momentary Bliss", image: "images/gorillaz/momentary-bliss.jpeg" },
       { name: "Désolé", image: "images/gorillaz/desole.jpeg" },
       { name: "Aries", image: "images/gorillaz/aries.jpeg" },
@@ -595,6 +593,7 @@ const ARTISTS = {
       { name: "Severed Head", image: "images/gorillaz/song-machine-season-one-strange-timez-2.jpeg" },
       { name: "With Love to an Ex", image: "images/gorillaz/song-machine-season-one-strange-timez-2.jpeg" },
       { name: "MLS", image: "images/gorillaz/song-machine-season-one-strange-timez-2.jpeg" },
+      { name: "Taxi Back to 80s Reykjavík", image: "images/gorillaz/song-machine-season-one-strange-timez-3.jpeg" },
 
       // Meanwhile
       { name: "Meanwhile", image: "images/gorillaz/meanwhile.jpeg" },
