@@ -452,7 +452,7 @@ const ARTISTS = {
       { name: "Film Music", image: "images/gorillaz/tomorrow-comes-today-2.jpeg" },
 
       // Demon Days
-      { name: "Feel Good Inc.", image: "images/gorillaz/feel-good-inc-1.jpeg" },
+      { name: "Feel Good Inc.", image: "images/gorillaz/feel-good-inc.jpeg" },
       { name: "Intro", image: "images/gorillaz/demon-days.jpeg" },
       { name: "Last Living Souls", image: "images/gorillaz/demon-days.jpeg" },
       { name: "Kids With Guns", image: "images/gorillaz/kids-with-guns.jpeg" },
