@@ -460,7 +460,7 @@ const ARTISTS = {
       { name: "12D3", image: "images/gorillaz/tomorrow-comes-today-1.jpeg" },
 
       // Demon Days
-      { name: "Feel Good Inc.", image: "images/gorillaz/feel-good-inc.jpeg" },
+      { name: "Feel Good Inc.", image: "images/gorillaz/feel-good-inc-1.jpeg" },
       { name: "Intro", image: "images/gorillaz/demon-days.jpeg" },
       { name: "Last Living Souls", image: "images/gorillaz/demon-days.jpeg" },
       { name: "Kids With Guns", image: "images/gorillaz/kids-with-guns.jpeg" },
@@ -481,10 +481,10 @@ const ARTISTS = {
       { name: "People", image: "images/gorillaz/dare-1.jpeg" },
       { name: "Hongkongaton", image: "images/gorillaz/dirty-harry-2.jpeg" },
       { name: "We Are Happy Landfill", image: "images/gorillaz/d-sides.jpeg" },
-      { name: "Hong Kong", image: "images/gorillaz/d-sides.jpeg" },
+      { name: "Hong Kong", image: "images/gorillaz/d-sides-1.jpeg" },
       { name: "Highway (Under Construction)", image: "images/gorillaz/dare-2.jpeg" },
-      { name: "Rockit", image: "images/gorillaz/d-sides.jpeg" },
-      { name: "The Swagga", image: "images/gorillaz/d-sides.jpeg" },
+      { name: "Rockit", image: "images/gorillaz/d-sides-1.jpeg" },
+      { name: "The Swagga", image: "images/gorillaz/d-sides-1.jpeg" },
       { name: "Bill Murray", image: "images/gorillaz/feel-good-inc-2.jpeg" },
       { name: "Murdoc is God", image: "images/gorillaz/dirty-harry-3.jpeg" },
       { name: "Spitting Out the Demons", image: "images/gorillaz/feel-good-inc-1.jpeg" },
@@ -632,9 +632,9 @@ const ARTISTS = {
       { name: "Casablanca", image: "images/gorillaz/the-mountain.jpeg" },
       { name: "The Sweet Prince", image: "images/gorillaz/the-mountain.jpeg" },
       { name: "The Sad God", image: "images/gorillaz/the-mountain.jpeg" },
-      { name: "Bolly Noir", image: "images/gorillaz/mountain.jpeg" },
-      { name: "Noah’s Descendants", image: "images/gorillaz/mountain.jpeg" },
-      { name: "Meri Sapno Ki Rani", image: "images/gorillaz/mountain.jpeg" },
+      { name: "Bolly Noir", image: "images/gorillaz/the-mountain.jpeg" },
+      { name: "Noah’s Descendants", image: "images/gorillaz/the-mountain.jpeg" },
+      { name: "Meri Sapno Ki Rani", image: "images/gorillaz/the-mountain.jpeg" },
     ]
   }
 };
